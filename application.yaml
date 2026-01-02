@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/YOUR_GITHUB_USER/YOUR_REPO_NAME.git'
+    repoURL: 'https://github.com/toyinogun/portfolio-project1.git'
     targetRevision: HEAD
     path: charts/
   destination:
