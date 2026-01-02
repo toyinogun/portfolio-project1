@@ -2,8 +2,28 @@
 
 This project demonstrates a modern GitOps workflow for deploying and managing a 2-tier web application on Kubernetes. Instead of manually applying changes to the cluster, we use ArgoCD to automatically synchronize the cluster's state with a GitHub repository, which acts as the "single source of truth."
 
-![GitOps Workflow Diagram](https://link-to-your-diagram.com/diagram.png)
-*(You can create a diagram using a tool like diagrams.net or Excalidraw and link it here)*
+```mermaid
+graph TD
+    subgraph Developer Laptop
+        A[Developer] -- git push --> B{GitHub Repo};
+    end
+
+    subgraph Kubernetes Cluster
+        C[ArgoCD Controller] -- Polls for changes --> B;
+        C -- Detects difference --> D{Reconciliation};
+        D -- Generates new manifests --> E[Kubernetes API];
+        E -- Updates cluster state --> F[Flask Pods];
+        E -- Updates cluster state --> G[Redis Pod];
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#add,stroke:#333,stroke-width:2px
+    style C fill:#f96,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#9cf,stroke:#333,stroke-width:2px
+    style F fill:#9f9,stroke:#333,stroke-width:2px
+    style G fill:#9f9,stroke:#333,stroke-width:2px
+```
 
 ## What Does This Project Do?
 
