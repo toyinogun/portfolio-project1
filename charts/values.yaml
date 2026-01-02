@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: your-dockerhub-username/flask-redis-app
+  repository: jnr4u2/flask-redis-app
   pullPolicy: IfNotPresent
   tag: "latest"
 
