@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: jnr4u2/flask-redis-app
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: "latest"
 
 service:
